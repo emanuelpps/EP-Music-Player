@@ -1,0 +1,7 @@
+.allTracksButton {
+  justify-self: center;
+  align-self: end;
+  align-content: end;
+  align-items: end;
+  grid-area: allTracksButton;
+}

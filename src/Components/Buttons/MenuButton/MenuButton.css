@@ -1,0 +1,8 @@
+.menuButton{
+    font-size: 1.5rem;
+}
+
+.menu:hover{
+    font-size: 1.7rem;
+    transition: 0.1s;
+}

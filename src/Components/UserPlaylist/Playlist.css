@@ -1,0 +1,11 @@
+.playlist {
+  background-color: #f6f4eb;
+  grid-area: playlist;
+}
+
+
+.playlist-Song{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+}

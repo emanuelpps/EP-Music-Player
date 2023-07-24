@@ -1,0 +1,15 @@
+.player {
+    display: grid; 
+    grid-template-columns: 0.2fr 1fr 0.2fr; 
+    grid-template-rows: repeat(2, 1fr) 0.5fr repeat(2, 1fr); 
+    gap: 0px 20px; 
+    grid-template-areas: 
+      ". . ."
+      "timeProgress progressBar totalTime"
+      ". . ."
+      ". playerButtons ."
+      ". allTracksButton ."; 
+    grid-area: player; 
+  justify-content: center;
+  align-self: center;
+}

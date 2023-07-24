@@ -1,0 +1,18 @@
+.layout {
+  height: 100vh;
+  max-width: 100vw;
+  background-image: url("../Assets/Images/mesh-gradient.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid; 
+  grid-auto-columns: 1fr; 
+  grid-auto-rows: 1fr; 
+  grid-template-columns: 0.8fr 0.8fr 0.8fr; 
+  grid-template-rows: 0.1fr 1fr 0.8fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ". . ."
+    ". cardPlayer userPlaylist"
+    ". playListContainer ."; 
+}

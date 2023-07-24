@@ -1,0 +1,28 @@
+.CardArtist {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr 0.2fr;
+  grid-template-rows: 0.5fr repeat(2, 1fr);
+  gap: 0px 0px;
+  grid-template-areas:
+    "addSong trackTitle menu"
+    ". trackImage ."
+    ". trackImage .";
+  grid-area: CardArtist;
+}
+
+.trackTitle h2 {
+  color: #f6f4eb;
+}
+
+.trackImage {
+  grid-area: trackImage;
+}
+.trackTitle {
+  grid-area: trackTitle;
+}
+.addSong {
+  grid-area: addSong;
+}
+.menu {
+  grid-area: menu;
+}

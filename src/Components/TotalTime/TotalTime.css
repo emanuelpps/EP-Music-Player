@@ -1,0 +1,9 @@
+.totalTime {
+  grid-area: totalTime;
+  
+  display: flex;
+}
+
+.time{
+    align-self: center;
+}

@@ -1,0 +1,5 @@
+.playListContainer {
+    height: 100%;
+  grid-area: playListContainer;
+  background-color: bisque;
+}

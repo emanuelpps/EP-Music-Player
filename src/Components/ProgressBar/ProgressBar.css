@@ -1,0 +1,4 @@
+.progressBar {
+  grid-area: progressBar;
+  align-self: center;
+}

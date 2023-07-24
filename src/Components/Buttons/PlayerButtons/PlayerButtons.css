@@ -1,0 +1,9 @@
+.playerButtons {
+    height: 100%;
+  justify-self: center;
+  grid-area: playerButtons;
+}
+
+.playerButton{
+    font-size: 1.8rem;
+}
