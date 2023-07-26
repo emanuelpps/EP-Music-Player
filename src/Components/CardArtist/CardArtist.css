@@ -5,8 +5,8 @@
   gap: 0px 0px;
   grid-template-areas:
     "addSong trackTitle menu"
-    ". trackImage ."
-    ". trackImage .";
+    ". . ."
+    ". . .";
   grid-area: CardArtist;
 }
 
@@ -15,7 +15,9 @@
 }
 
 .trackImage {
-  grid-area: trackImage;
+  grid-area: 2 / 2 / 4 / 3;
+  /*  display: none;
+  grid-area: 2 / 2 / 1 / 3;*/
 }
 .trackTitle {
   grid-area: trackTitle;

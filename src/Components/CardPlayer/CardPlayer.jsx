@@ -5,7 +5,7 @@ import Player from "../Player/Player";
 
 export default function CardPlayer() {
   return (
-    <div className="cardPlayer">
+    <div id="cardPlayerId" className="cardPlayer">
       <CardArtist />
       <Player/>
     </div>

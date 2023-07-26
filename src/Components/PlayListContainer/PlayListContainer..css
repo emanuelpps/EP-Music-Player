@@ -1,5 +1,7 @@
 .playListContainer {
-    height: 100%;
-  grid-area: playListContainer;
-  background-color: bisque;
+  z-index: 1;
+  display: none;
+  grid-area: 3 / 2 / 4 / 3;
+  background-color: #749BC2;
+  overflow-y:scroll
 }

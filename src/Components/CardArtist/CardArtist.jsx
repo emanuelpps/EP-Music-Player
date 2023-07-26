@@ -17,7 +17,7 @@ export default function CardArtist() {
       <div className="menu">
         <MenuButton />
       </div>
-      <div className="trackImage">
+      <div id="trackImageId" className="trackImage">
         <SongImage />
       </div>
     </div>

@@ -1,10 +1,11 @@
-import './App.css';
-import Layout from './Layout/Layout';
+import "./App.css";
+import Layout from "./Layout/Layout";
+import { MusicContextProvider } from "./Context/MusicContext";
 function App() {
   return (
-    <div className="App">
-      <Layout/>
-    </div>
+    <MusicContextProvider>
+      <Layout />
+    </MusicContextProvider>
   );
 }
 

@@ -1,15 +1,60 @@
 .player {
-    display: grid; 
-    grid-template-columns: 0.2fr 1fr 0.2fr; 
-    grid-template-rows: repeat(2, 1fr) 0.5fr repeat(2, 1fr); 
-    gap: 0px 20px; 
-    grid-template-areas: 
-      ". . ."
-      "timeProgress progressBar totalTime"
-      ". . ."
-      ". playerButtons ."
-      ". allTracksButton ."; 
-    grid-area: player; 
+  display: grid;
+  grid-template-columns: 0.2fr 1fr 0.2fr;
+  grid-template-rows: repeat(2, 1fr) 0.5fr repeat(2, 1fr);
+  gap: 0px 20px;
+  grid-template-areas:
+    ". . ."
+    "timeProgress progressBar totalTime"
+    ". . ."
+    ". playerButtons ."
+    ". allTracksButton .";
+  grid-area: 3 / 2 / 5 / 5;
   justify-content: center;
   align-self: center;
+  /*  grid-area: 3 / 2 / 1 / 5;*/
 }
+
+.totalTime {
+  grid-area: totalTime;
+  
+  display: flex;
+}
+
+.time{
+    align-self: center;
+    color: #828282;
+    font-size: smaller;
+}
+
+.timeProgress {
+  height: 100%;
+  width: 100%;
+  grid-area: timeProgress;
+  display: flex;
+}
+
+.progressBar {
+  grid-area: progressBar;
+  align-self: center;
+}
+
+.progress-bar{
+  color:#4682A9;
+}
+
+.timeline {
+  width: 100%;
+  background-color: #27ae60;
+}
+
+input[type="range"] {
+  background-color: #27ae60;
+}
+
+@media (max-width: 900px) {
+  .component {
+    width: 50%;
+  }
+}
+

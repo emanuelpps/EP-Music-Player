@@ -1,0 +1,14 @@
+.trackPlaylistButton{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.trackTitle{
+    font-size: 0.8rem;
+}
+
+.trackTime{
+    font-size: 0.8rem;
+}

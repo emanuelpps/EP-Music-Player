@@ -13,6 +13,6 @@
   gap: 0px 0px; 
   grid-template-areas: 
     ". . ."
-    ". cardPlayer userPlaylist"
-    ". playListContainer ."; 
+    ". . userPlaylist"
+    ". . ."; 
 }
