@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./AllTracksButton.css";
-import { CgPushChevronDownO } from "react-icons/cg";
-import { CgPushChevronUpO } from "react-icons/cg";
+import { CgChevronDownR } from "react-icons/cg";
+import { CgChevronUpR } from "react-icons/cg";
 
 export default function AllTracksButton() {
   const [showPlayListContainer, setShowPlaylistContainer] = useState(false);
@@ -28,7 +28,13 @@ export default function AllTracksButton() {
         : "2 / 2 / 4 / 3";
       player.style.gridArea = showPlayListContainer
         ? "3 / 2 / 5 / 5"
-        : "3 / 2 / 1 / 5";
+        : "2 / 2 / 1 / 5";
+      player.style.marginTop = showPlayListContainer
+      ? "0px"
+      : "170px"
+      player.style.borderRadius = showPlayListContainer
+      ? "12px"
+      : "12px 12px 2px 2px"
     }
     setShowPlaylistContainer(!showPlayListContainer);
   }
@@ -36,7 +42,7 @@ export default function AllTracksButton() {
   return (
     <div className="allTracksButton">
       <button className="buttonReset" onClick={allTracksHandler}>
-        {showPlayListContainer ? <CgPushChevronDownO /> : <CgPushChevronUpO />}
+        {showPlayListContainer ? <CgChevronDownR /> : <CgChevronUpR />}
       </button>
     </div>
   );

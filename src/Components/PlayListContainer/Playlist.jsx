@@ -5,7 +5,7 @@ import { MusicContext } from "../../Context/MusicContext";
 export default function Playlist({ musicPlaylistTracks, id}) {
 
     
-      const { streamTrack } = useContext(MusicContext);
+      const { streamTrack,fetchTrackInfo } = useContext(MusicContext);
 
     const trackTime = () => {
       let hour = Math.floor(musicPlaylistTracks.duration / 3600);
@@ -19,8 +19,11 @@ export default function Playlist({ musicPlaylistTracks, id}) {
     };
 
   return (
-      <button className="buttonReset trackPlaylistButton" onClick={() => streamTrack(id)}>
-        <h5 className="text-start trackTitle">{musicPlaylistTracks.title}</h5>
+      <button className="buttonReset trackPlaylistButton" onClick={() => {
+        streamTrack(id);
+        fetchTrackInfo(id); // Reemplaza "otraFuncion()" con el nombre de la segunda función que deseas llamar
+      }}>
+        <h5 className="text-start track-Title">{musicPlaylistTracks.title}</h5>
         <h7 className="trackTime">{trackTime()}</h7>
       </button>
   );

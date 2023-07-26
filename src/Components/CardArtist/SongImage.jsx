@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./SongImage.css";
-import imageExample from "../../Assets/Images/lemonmusicstudio.webp";
+import { MusicContext } from "../../Context/MusicContext";
+import NoSongImage from "../../Assets/Images/ep-music.png";
 
 export default function SongImage() {
+  const {songInfo} = useContext(MusicContext);
+  console.log(songInfo);
   return (
-      <img src={imageExample} alt="example"className="songImage"/>
+    songInfo.artwork ?
+      <img src={songInfo?.artwork?.["150x150"]} alt={songInfo.title} className="songImage"/>:
+      <img src={NoSongImage} alt={songInfo.title}  className="songImage"/>
   );
 }

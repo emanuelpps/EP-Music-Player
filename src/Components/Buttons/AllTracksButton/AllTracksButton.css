@@ -1,8 +1,6 @@
 .allTracksButton {
-  justify-self: center;
-  align-self: end;
-  align-content: end;
-  align-items: end;
-  grid-area: allTracksButton;
+  justify-self: center; 
+  align-self: center;
+  grid-area: 4 / 2 / 3 / 3;
   font-size: 1.5rem;
 }

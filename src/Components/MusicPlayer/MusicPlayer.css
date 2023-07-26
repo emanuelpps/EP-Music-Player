@@ -1,0 +1,15 @@
+.audioPlayer{
+    width: 100%;
+    justify-self: center; 
+    align-self: center; 
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.playerAudio{
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+.time-color{
+    color: #F6F4EB !important;
+}
