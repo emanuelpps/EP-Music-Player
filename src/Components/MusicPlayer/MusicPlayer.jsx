@@ -3,15 +3,14 @@ import "./MusicPlayer.css";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 import { MusicContext } from "../../Context/MusicContext";
-import { CgPlayButtonR } from "react-icons/cg";
-import { CgPlayPauseR } from "react-icons/cg";
-import { CgPlayTrackNextR } from "react-icons/cg";
-import { CgPlayTrackPrevR } from "react-icons/cg";
-import { CgRepeat } from "react-icons/cg";
-
+import { BsFillPlayFill } from "react-icons/bs";
+import { BsFillPauseFill } from "react-icons/bs";
+import { BsFillSkipEndFill } from "react-icons/bs";
+import { BsFillSkipStartFill } from "react-icons/bs";
 
 export default function MusicPlayer() {
-  const { streamSong, nextSongStream, songInfo, previousSongStream } = useContext(MusicContext);
+  const { streamSong, nextSongStream, songInfo, previousSongStream } =
+    useContext(MusicContext);
 
   return (
     <div className="audioPlayer">
@@ -25,14 +24,14 @@ export default function MusicPlayer() {
         customVolumeControls={[]}
         src={streamSong}
         onPlay={(e) => console.log("onPlay")}
+        onEnded={() => nextSongStream(songInfo.id)}
         onClickPrevious={(e) => previousSongStream(songInfo.id)}
-        onClickNext={(e) =>nextSongStream(songInfo.id)}
+        onClickNext={(e) => nextSongStream(songInfo.id)}
         customIcons={{
-          play: <CgPlayButtonR className="buttonReset" />,
-          pause: <CgPlayPauseR className="buttonReset" />,
-          next: <CgPlayTrackNextR className="buttonReset" />,
-          previous: <CgPlayTrackPrevR className="buttonReset" />,
-          loop: <CgRepeat className="buttonReset" />
+          play: <BsFillPlayFill className="button-player buttonReset mx-1" />,
+          pause: <BsFillPauseFill className="button-player buttonReset mx-1" />,
+          next: <BsFillSkipEndFill className="button-player buttonReset mx-1" />,
+          previous: <BsFillSkipStartFill className="button-player buttonReset mx-1" />
         }}
         className="playerAudio"
       />

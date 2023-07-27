@@ -1,13 +1,30 @@
 import React from "react";
 import "./MenuButton.css";
-import { TiThMenuOutline } from "react-icons/ti";
+import { FaAlignJustify } from "react-icons/fa";
 
 export default function MenuButton() {
   return (
-    <div>
-      <button className="buttonReset menuButton">
-        <TiThMenuOutline />
+    <div className="dorpdown">
+      <button
+        className="buttonReset menuButton"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <FaAlignJustify />
       </button>
+      <ul class="dropdown-menu">
+        <li>
+          <a class="dropdown-item" href="#">
+            My Playlist
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="#">
+            More About Me
+          </a>
+        </li>
+      </ul>
     </div>
   );
 }

@@ -1,7 +1,25 @@
 .playListContainer {
-  z-index: 1;
+  z-index: 2;
   display: none;
   grid-area: 3 / 2 / 4 / 3;
-  background-color: #749BC2;
-  overflow-y:scroll
+  background-color: #9F81E0;
+  overflow-y:scroll;
+  padding-top: 30px;
 }
+
+
+.playListContainer::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+.playListContainer::-webkit-scrollbar-track {
+  background: transparent;        /* color of the tracking area */
+}
+
+.playListContainer::-webkit-scrollbar-thumb {
+  background-color: #9074ce;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid #9975e5;    /* creates padding around scroll thumb */
+}
+
+

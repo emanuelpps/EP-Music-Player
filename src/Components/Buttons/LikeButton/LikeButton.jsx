@@ -1,12 +1,12 @@
 import React from "react";
 import "./LikeButton.css";
-import { AiOutlineHeart } from "react-icons/ai";
+import { FaRegHeart } from "react-icons/fa";
 
 export default function LikeButton() {
   return (
     <div>
       <button className="buttonReset likeButton">
-        <AiOutlineHeart />
+        <FaRegHeart />
       </button>
     </div>
   );

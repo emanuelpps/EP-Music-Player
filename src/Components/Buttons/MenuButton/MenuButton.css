@@ -6,3 +6,11 @@
     font-size: 1.7rem;
     transition: 0.1s;
 }
+
+.dropdown-menu{
+    background-color: #adb9c5 !important;
+}
+
+.dropdown-item:hover{
+    background-color: #9F81E0 !important;
+}

@@ -12,7 +12,8 @@
 }
 
 .trackTitle h3 {
-  color: #f6f4eb;
+  color: #404758;
+  font-size: 1.2rem;
 }
 
 .trackImage {
@@ -35,5 +36,5 @@
 
 
 .song-Title{
-  color:#22465e;
+  color:#687D94;
 }

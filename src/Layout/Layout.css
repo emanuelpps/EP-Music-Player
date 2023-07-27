@@ -1,14 +1,17 @@
 .layout {
+  backdrop-filter: blur(11px);
+  -webkit-backdrop-filter: blur(11px);
   height: 100vh;
   max-width: 100vw;
-  background-image: url("../Assets/Images/mesh-gradient.png");
+  background-color: #c2d1e1;
+  background-image: linear-gradient(180deg, #acb8c6 0%, #b7c3d1 100%);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   display: grid; 
   grid-auto-columns: 1fr; 
   grid-auto-rows: 1fr; 
-  grid-template-columns: 0.8fr 0.8fr 0.8fr; 
+  grid-template-columns: 0.8fr 0.5fr 0.8fr; 
   grid-template-rows: 0.1fr 1fr 0.8fr; 
   gap: 0px 0px; 
   grid-template-areas: 

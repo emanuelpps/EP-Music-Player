@@ -1,14 +1,35 @@
 .trackPlaylistButton{
+    max-height: max-content;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    z-index: 2;
+    border-bottom: 2px solid #846DB9;
+    border-top: 2px solid #BAA3EB;
+    align-self: center;
+    align-content: center;
+    align-items: center;
+}
+
+.trackPlaylistButton:hover{
+    background-color: #876fbf;
+}
+
+.trackPlaylistButton:active{
+    background-color: #6b5899;
+}
+
+.trackPlaylistButton:focus{
+    background-color: #6b5899;
 }
 
 .track-Title{
     font-size: 0.8rem;
+    color: #EDE8F9;
 }
 
 .trackTime{
     font-size: 0.8rem;
+    color:#EDE8F9;
 }
