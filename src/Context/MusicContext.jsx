@@ -1,7 +1,6 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect } from "react";
 import { PLAYLIST_API, TRACK_STREAM, TRACK_INFO } from "../Api/MusicApi";
 import useSound from "use-sound";
-
 
 export const MusicContext = createContext("");
 
@@ -13,9 +12,8 @@ export const MusicContextProvider = ({ children }) => {
   const [playlistTracks, setPlaylistTracks] = useState([]);
   const [streamSong, setStreamSong] = useState("");
   const [songInfo, setSongInfo] = useState([]);
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [play, { pause}] = useSound(streamSong);
-
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [play, { pause }] = useSound(streamSong);
 
   useEffect(() => {
     const fetchPlaylistTracks = async () => {
@@ -26,7 +24,7 @@ export const MusicContextProvider = ({ children }) => {
       } catch (error) {
         console.log(error);
       }
-    }
+    };
     fetchPlaylistTracks(); // Llamar a la función para obtener los datos
   }, []);
 
@@ -36,9 +34,10 @@ export const MusicContextProvider = ({ children }) => {
 
   const playRandomTrack = () => {
     if (playlistTracks.length > 0) {
-      const selectRandomTrack = playlistTracks[Math.floor(Math.random() * playlistTracks.length)];
-      streamTrack(selectRandomTrack?.id);
-      fetchTrackInfo(selectRandomTrack?.id);
+      const selectRandomTrack =
+        playlistTracks[Math.floor(Math.random() * playlistTracks.length)];
+      streamTrack(selectRandomTrack.id);
+      fetchTrackInfo(selectRandomTrack.id);
     }
   };
 
@@ -46,63 +45,86 @@ export const MusicContextProvider = ({ children }) => {
 
   const streamTrack = async (id) => {
     try {
-        const audioUrl = await fetch(`${TRACK_STREAM}/${id}/stream?app_name=EP-MUSIC-PLAYER`);
-        setStreamSong(audioUrl.url); // Establecer la URL como fuente para la reproducción
-      } catch (error) {
-        console.log(error);
-      }
+      const audioUrl = await fetch(
+        `${TRACK_STREAM}/${id}/stream?app_name=EP-MUSIC-PLAYER`
+      );
+      setStreamSong(audioUrl.url); // Establecer la URL como fuente para la reproducción
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const selectedTrack = (id) => {
+    //armar una logica que busque el id de la pista que se escucha y pinte en el playlist de otro color
+    if(playlistTracks.id === id){
+    const titleSelected = document.getElementById("songTitleId");
+    titleSelected.style.backgroundColor = "#4682A9";
+  }};
+
+  const fetchTrackInfo = async (id) => {
+    try {
+      const response = await fetch(
+        `${TRACK_INFO}/${id}?app_name=EP-MUSIC-PLAYER`
+      );
+      const data = await response.json();
+      setSongInfo(data.data); // Guardar los datos en el estado
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const nextSongStream = (id) => {
+    if (playlistTracks.length === 0) {
+      console.log("La lista de reproducción está vacía.");
+      return;
     }
 
-    const fetchTrackInfo = async (id) => {
-      try {
-        const response = await fetch(`${TRACK_INFO}/${id}?app_name=EP-MUSIC-PLAYER`);
-        const data = await response.json();
-        setSongInfo(data.data); // Guardar los datos en el estado
-      } catch (error) {
-        console.log(error);
-      }
+    const songIndex = playlistTracks.findIndex((track) => track.id === id);
+
+    if (songIndex === -1) {
+      console.log("Canción no encontrada en la lista de reproducción.");
+      return;
     }
 
-    const nextSongStream = (id) => {
-      const songIndex = playlistTracks.findIndex((track) => track.id === id) + 1;
-      console.log("index", songIndex);
-      //const nextSong = playlistTracks.fromIndex({songIndex});
-      if (songIndex !== -1) {
-        fetchTrackInfo(playlistTracks[songIndex].id);
-        streamTrack(playlistTracks[songIndex].id);
-      } else if(playlistTracks.length + 1){
-        fetchTrackInfo(playlistTracks[1].id);
-        streamTrack(playlistTracks[1].id);
-      }else {
-        console.log("Canción no encontrada en la lista de reproducción.");
-      }
-    };
+    const nextSongIndex = (songIndex + 1) % playlistTracks.length;
+    const nextSongId = playlistTracks[nextSongIndex].id;
 
-    const previousSongStream = (id) => {
-      const songIndex = playlistTracks.findIndex((track) => track.id === id) - 1;
-      console.log("index", songIndex);
-      //const nextSong = playlistTracks.fromIndex({songIndex});
-      if (songIndex !== -1) {
-        fetchTrackInfo(playlistTracks[songIndex].id);
-        streamTrack(playlistTracks[songIndex].id);
-      }else {
-        console.log("Canción no encontrada en la lista de reproducción.");
-      }
-    };
+    fetchTrackInfo(nextSongId);
+    streamTrack(nextSongId);
+  };
 
+  const previousSongStream = (id) => {
+    if (playlistTracks.length === 0) {
+      console.log("La lista de reproducción está vacía.");
+      return;
+    }
 
-    const playingButton = () => {
-        if (isPlaying) {
-          pause(); // this will pause the audio
-          setIsPlaying(false);
-        } else {
-          play(); // this will play the audio
-          setIsPlaying(true);
-        }
-      };
-    
+    const songIndex = playlistTracks.findIndex((track) => track.id === id);
 
-console.log(streamSong);
+    if (songIndex === -1) {
+      console.log("Canción no encontrada en la lista de reproducción.");
+      return;
+    }
+
+    const previousSongIndex =
+      (songIndex - 1 + playlistTracks.length) % playlistTracks.length;
+    const previousSongId = playlistTracks[previousSongIndex].id;
+
+    fetchTrackInfo(previousSongId);
+    streamTrack(previousSongId);
+  };
+
+  const playingButton = () => {
+    if (isPlaying) {
+      pause(); // this will pause the audio
+      setIsPlaying(false);
+    } else {
+      play(); // this will play the audio
+      setIsPlaying(true);
+    }
+  };
+
+  console.log(streamSong);
   const context = {
     playlistTracks,
     streamTrack,
@@ -112,10 +134,10 @@ console.log(streamSong);
     fetchTrackInfo,
     songInfo,
     nextSongStream,
-    previousSongStream
+    previousSongStream,
   };
 
   return <Provider value={context}>{children}</Provider>;
-}
+};
 
 export default useApiContext;

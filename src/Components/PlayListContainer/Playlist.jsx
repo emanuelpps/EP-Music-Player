@@ -18,8 +18,10 @@ export default function Playlist({ musicPlaylistTracks, id}) {
       return hour === "00" ? minute + ":" + second : hour + ":" + minute + ":" + second;
     };
 
+
+
   return (
-      <button className="buttonReset trackPlaylistButton" onClick={() => {
+      <button id="songTitleId"  className="buttonReset trackPlaylistButton" onClick={() => {
         streamTrack(id);
         fetchTrackInfo(id); // Reemplaza "otraFuncion()" con el nombre de la segunda función que deseas llamar
       }}>
