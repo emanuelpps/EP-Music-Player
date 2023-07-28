@@ -19,28 +19,28 @@ export default function AllTracksButton() {
       playlistContainerShow.style.display = showPlayListContainer
         ? "none"
         : "block";
+        playlistContainerShow.style.transition = showPlayListContainer
+        ? "none"
+        : "4s"
       trackImage.style.display = showPlayListContainer ? "block" : "none";
-      trackImage.style.gridArea = showPlayListContainer
-        ? "2 / 2 / 4 / 3"
-        : "2 / 2 / 1 / 3";
       cardPlayer.style.gridArea = showPlayListContainer
-        ? "2 / 2 / 3 / 3"
+        ? "2 / 2 / 4 / 3"
         : "2 / 2 / 4 / 3";
-        cardPlayer.style.height = showPlayListContainer
-        ? ""
-        : "300px"
-      player.style.gridArea = showPlayListContainer
-        ? "3 / 2 / 5 / 5"
-        : "2 / 2 / 1 / 5";
+        cardPlayer.style.transition = showPlayListContainer
+      ? "none"
+      : "easy-all"
+      player.style.translate = showPlayListContainer
+        ? "0px 0px"
+        : "0px -400px";
       player.style.marginTop = showPlayListContainer
-      ? "0px"
-      : "240px"
+      ? "-30px"
+      : "250px"
       player.style.borderRadius = showPlayListContainer
       ? "12px"
       : "12px"
-      /* player.style.transition = showPlayListContainer
-      ? "none"
-      : "ease-in-out 3s" */
+       player.style.transition = showPlayListContainer
+      ? "ease-out 1s"
+      : "ease-out 1s"
     }
     setShowPlaylistContainer(!showPlayListContainer);
   }

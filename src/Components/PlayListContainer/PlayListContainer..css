@@ -1,10 +1,15 @@
 .playListContainer {
-  z-index: 2;
+  z-index: 1;
   display: none;
   grid-area: 3 / 2 / 4 / 3;
   background-color: #9F81E0;
   overflow-y:scroll;
   padding-top: 30px;
+  transition-delay: 40s;
+}
+
+.playListContainer:active {
+  transition-delay: 4s;
 }
 
 

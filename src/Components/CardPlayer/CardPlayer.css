@@ -1,7 +1,6 @@
 .cardPlayer {
   position: relative;
-  z-index: 1;
-  height: auto;
+  height: 380px;
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   background-color: #bfccd9;
@@ -16,7 +15,7 @@
     ". CardArtist CardArtist CardArtist ."
     ". . . . ."
     ". . . . ."; 
-  grid-area: 2 / 2 / 3 / 3;
+  grid-area: 2 / 2 / 4 / 3;
   box-shadow:
   2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
   6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
@@ -26,6 +25,6 @@
   100px 100px 80px rgba(0, 0, 0, 0.07)
 ;
   /* grid-area: 2 / 2 / 4 / 3; */ 
-  z-index: 100;
+  z-index: 2;
   }
 

@@ -1,5 +1,5 @@
 .CardArtist {
-  height: 400px;
+  height: 380px;
   display: grid;
   grid-template-columns: 0.2fr 1fr 0.2fr;
   grid-template-rows: 0.5fr repeat(2, 1fr);
@@ -38,3 +38,6 @@
 .song-Title{
   color:#687D94;
 }
+
+#trackImageId{}
+

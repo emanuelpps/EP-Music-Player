@@ -28,10 +28,10 @@ export default function MusicPlayer() {
         onClickPrevious={(e) => previousSongStream(songInfo.id)}
         onClickNext={(e) => nextSongStream(songInfo.id)}
         customIcons={{
-          play: <BsFillPlayFill className="button-player buttonReset mx-1" />,
-          pause: <BsFillPauseFill className="button-player buttonReset mx-1" />,
-          next: <BsFillSkipEndFill className="button-player buttonReset mx-1" />,
-          previous: <BsFillSkipStartFill className="button-player buttonReset mx-1" />
+          play: <BsFillPlayFill className="button-player buttonReset" />,
+          pause: <BsFillPauseFill className="button-player buttonReset" />,
+          next: <BsFillSkipEndFill className="button-player buttonReset" />,
+          previous: <BsFillSkipStartFill className="button-player buttonReset" />
         }}
         className="playerAudio"
       />
