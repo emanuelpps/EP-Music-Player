@@ -2,15 +2,19 @@ import React, { useState } from "react";
 import "./AllTracksButton.css";
 import { BsArrowBarDown } from "react-icons/bs";
 import { BsArrowBarUp } from "react-icons/bs";
+import { useContext } from "react";
+import { MusicContext } from "../../../Context/MusicContext";
 
 export default function AllTracksButton() {
-  const [showPlayListContainer, setShowPlaylistContainer] = useState(false);
+  const { showPlayListContainer, setShowPlaylistContainer } = useContext(MusicContext);
+
+  
+
 
   function allTracksHandler() {
     const playlistContainerShow = document.getElementById(
       "playlistContainerId"
     );
-    const trackImage = document.getElementById("trackImageId");
     const cardPlayer = document.getElementById("cardPlayerId");
     const player = document.getElementById("playerId");
 
@@ -41,7 +45,7 @@ export default function AllTracksButton() {
       ? "ease-out 1s"
       : "ease-out 1s"
     }
-    setShowPlaylistContainer(!showPlayListContainer);
+    setShowPlaylistContainer(!showPlayListContainer)
   }
 
   return (

@@ -2,29 +2,61 @@
   z-index: 1;
   display: none;
   grid-area: 3 / 2 / 4 / 3;
-  background-color: #9F81E0;
-  overflow-y:scroll;
+  background-color: #9f81e0;
+  overflow-y: scroll;
   padding-top: 30px;
+  border-radius: 12px;
   transition-delay: 40s;
+  transition: ease-in 25s;
+	-webkit-animation: scale-up-ver-top 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-ver-top 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+          margin-bottom: 50px;
 }
+
+@-webkit-keyframes scale-up-ver-top {
+  0% {
+    -webkit-transform: scaleY(0.4);
+            transform: scaleY(0.4);
+    -webkit-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+  }
+}
+@keyframes scale-up-ver-top {
+  0% {
+    -webkit-transform: scaleY(0.4);
+            transform: scaleY(0.4);
+    -webkit-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+  }
+}
+
 
 .playListContainer:active {
   transition-delay: 4s;
 }
 
-
 .playListContainer::-webkit-scrollbar {
-  width: 12px;               /* width of the entire scrollbar */
+  width: 12px; /* width of the entire scrollbar */
 }
 
 .playListContainer::-webkit-scrollbar-track {
-  background: transparent;        /* color of the tracking area */
+  background: transparent; /* color of the tracking area */
 }
 
 .playListContainer::-webkit-scrollbar-thumb {
-  background-color: #9074ce;    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
-  border: 3px solid #9975e5;    /* creates padding around scroll thumb */
+  background-color: #9074ce; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid #9975e5; /* creates padding around scroll thumb */
 }
-
-

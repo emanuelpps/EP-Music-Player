@@ -1,7 +1,6 @@
 .userPlaylist {
   position: relative;
   width: 80%;
-
   background-color: #9F81E0;
   overflow-y:scroll;
   border-radius: 16px;

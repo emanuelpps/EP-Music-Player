@@ -7,10 +7,25 @@ import { BsFillPlayFill } from "react-icons/bs";
 import { BsFillPauseFill } from "react-icons/bs";
 import { BsFillSkipEndFill } from "react-icons/bs";
 import { BsFillSkipStartFill } from "react-icons/bs";
+import useSound from "use-sound";
+
 
 export default function MusicPlayer() {
-  const { streamSong, nextSongStream, songInfo, previousSongStream } =
+  const { streamSong, nextSongStream, songInfo, previousSongStream, setIsPlaying } =
     useContext(MusicContext);
+  
+  const [play, { pause }] = useSound(streamSong);
+
+
+    const playingButton = () => {
+        play(); // this will play the audio
+        setIsPlaying(true);
+      };
+
+      const pauseButton = () => {
+        pause(); // this will pause the audio
+        setIsPlaying(false);
+      }
 
   return (
     <div className="audioPlayer">
@@ -23,7 +38,8 @@ export default function MusicPlayer() {
         customAdditionalControls={[]}
         customVolumeControls={[]}
         src={streamSong}
-        onPlay={(e) => console.log("onPlay")}
+        onPlay={e => playingButton()}
+        onPause={e => pauseButton()}
         onEnded={() => nextSongStream(songInfo.id)}
         onClickPrevious={(e) => previousSongStream(songInfo.id)}
         onClickNext={(e) => nextSongStream(songInfo.id)}

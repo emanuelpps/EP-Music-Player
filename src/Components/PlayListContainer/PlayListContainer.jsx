@@ -5,7 +5,7 @@ import Playlist from './Playlist';
 
 export default function PlayListContainer() {
 
-  const {playlistTracks} = useContext(MusicContext);
+  const {playlistTracks, showPlayListContainer} = useContext(MusicContext);
   return (
     <div id='playlistContainerId' className='playListContainer'>
       {playlistTracks?.map((item, index) => (

@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { PLAYLIST_API, TRACK_STREAM, TRACK_INFO } from "../Api/MusicApi";
-import useSound from "use-sound";
 
 export const MusicContext = createContext("");
 
@@ -13,7 +12,7 @@ export const MusicContextProvider = ({ children }) => {
   const [streamSong, setStreamSong] = useState("");
   const [songInfo, setSongInfo] = useState([]);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [play, { pause }] = useSound(streamSong);
+  const [showPlayListContainer, setShowPlaylistContainer] = useState(false);
 
   useEffect(() => {
     const fetchPlaylistTracks = async () => {
@@ -114,27 +113,21 @@ export const MusicContextProvider = ({ children }) => {
     streamTrack(previousSongId);
   };
 
-  const playingButton = () => {
-    if (isPlaying) {
-      pause(); // this will pause the audio
-      setIsPlaying(false);
-    } else {
-      play(); // this will play the audio
-      setIsPlaying(true);
-    }
-  };
+
 
   console.log(streamSong);
   const context = {
     playlistTracks,
     streamTrack,
     streamSong,
-    playingButton,
+    setIsPlaying,
     isPlaying,
     fetchTrackInfo,
     songInfo,
     nextSongStream,
     previousSongStream,
+    showPlayListContainer,
+    setShowPlaylistContainer
   };
 
   return <Provider value={context}>{children}</Provider>;
