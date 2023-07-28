@@ -4,6 +4,7 @@
   align-self: center;
   grid-area: 1 / 2 / 2 / 3;
   z-index: 3;
+  border-radius: 22px;
 }
 
 .playerAudio {

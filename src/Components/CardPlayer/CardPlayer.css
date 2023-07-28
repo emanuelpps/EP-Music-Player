@@ -4,7 +4,7 @@
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   background-color: #bfccd9;
-  border-radius: 12px;
+  border-radius: 22px;
   border: 1px solid rgba(255, 255, 255, 0.125);
   display: grid; 
   grid-template-columns: 0fr repeat(3, 1fr) 0fr; 

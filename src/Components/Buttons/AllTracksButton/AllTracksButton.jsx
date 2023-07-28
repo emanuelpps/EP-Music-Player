@@ -38,9 +38,6 @@ export default function AllTracksButton() {
       player.style.marginTop = showPlayListContainer
       ? "-30px"
       : "250px"
-      player.style.borderRadius = showPlayListContainer
-      ? "12px"
-      : "12px"
        player.style.transition = showPlayListContainer
       ? "ease-out 1s"
       : "ease-out 1s"
