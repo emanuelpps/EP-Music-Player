@@ -81,7 +81,7 @@
   border-radius: 50%;
   width: 30px;
   background: rgb(246,244,235);
-  background: radial-gradient(circle, rgba(246,244,235,1) 21%, rgba(189,62,40,1) 25%, rgba(36,36,36,1) 49%);
+  background: radial-gradient(circle, rgba(246,244,235,1) 26%, rgba(189,62,40,1) 27%, rgba(36,36,36,1) 49%);
   box-shadow: 0 5px 10px rgb(0 0 0 / 30%);  top: 50%;
   left: 50%;
   transform: translate(-300%, -50%);
