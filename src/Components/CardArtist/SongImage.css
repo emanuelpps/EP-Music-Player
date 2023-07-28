@@ -1,5 +1,5 @@
 .songImage{
     border-radius: 50%;
-    width: 180px;
-    height: 180px;
+    width: 150px;
+    height: 150px;  animation: rotate 5s linear infinite;
 }

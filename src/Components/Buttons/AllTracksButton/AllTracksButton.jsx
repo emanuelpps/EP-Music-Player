@@ -22,7 +22,6 @@ export default function AllTracksButton() {
         playlistContainerShow.style.transition = showPlayListContainer
         ? "none"
         : "4s"
-      trackImage.style.display = showPlayListContainer ? "block" : "none";
       cardPlayer.style.gridArea = showPlayListContainer
         ? "2 / 2 / 4 / 3"
         : "2 / 2 / 4 / 3";
