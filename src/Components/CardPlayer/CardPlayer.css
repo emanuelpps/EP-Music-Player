@@ -3,7 +3,9 @@
   height: 380px;
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: #bfccd9;
+  background-color: #ffffff;
+  background-image: linear-gradient(160deg, #ffffff 3%, #c2d1e1 62%, #b7c3d1 87%);
+   
   border-radius: 22px;
   border: 1px solid rgba(255, 255, 255, 0.125);
   display: grid; 

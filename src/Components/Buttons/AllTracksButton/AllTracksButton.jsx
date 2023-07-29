@@ -6,10 +6,8 @@ import { useContext } from "react";
 import { MusicContext } from "../../../Context/MusicContext";
 
 export default function AllTracksButton() {
-  const { showPlayListContainer, setShowPlaylistContainer } = useContext(MusicContext);
-
-  
-
+  const { showPlayListContainer, setShowPlaylistContainer } =
+    useContext(MusicContext);
 
   function allTracksHandler() {
     const playlistContainerShow = document.getElementById(
@@ -23,32 +21,33 @@ export default function AllTracksButton() {
       playlistContainerShow.style.display = showPlayListContainer
         ? "none"
         : "block";
-        playlistContainerShow.style.transition = showPlayListContainer
+      playlistContainerShow.style.transition = showPlayListContainer
         ? "none"
-        : "4s"
+        : "4s";
       cardPlayer.style.gridArea = showPlayListContainer
         ? "2 / 2 / 4 / 3"
         : "2 / 2 / 4 / 3";
-        cardPlayer.style.transition = showPlayListContainer
-      ? "none"
-      : "easy-all"
-      player.style.translate = showPlayListContainer
-        ? "0px 0px"
-        : "0px -400px";
-      player.style.marginTop = showPlayListContainer
-      ? "-30px"
-      : "250px"
-       player.style.transition = showPlayListContainer
-      ? "ease-out 1s"
-      : "ease-out 1s"
+      cardPlayer.style.transition = showPlayListContainer ? "none" : "easy-all";
+      player.style.translate = showPlayListContainer ? "0px 0px" : "0px -400px";
+      player.style.marginTop = showPlayListContainer ? "-30px" : "250px";
+      player.style.transition = showPlayListContainer
+        ? "ease-out 1s"
+        : "ease-out 1s";
     }
-    setShowPlaylistContainer(!showPlayListContainer)
+    setShowPlaylistContainer(!showPlayListContainer);
   }
 
   return (
     <div className="allTracksButton">
-      <button className="allTrack-button buttonReset" onClick={allTracksHandler}>
-        {showPlayListContainer ? <BsArrowBarDown /> : <BsArrowBarUp />}
+      <button
+        className="allTrack-button buttonReset"
+        onClick={allTracksHandler}
+      >
+        {showPlayListContainer ? (
+          <BsArrowBarDown className="arrowBar" />
+        ) : (
+          <BsArrowBarUp className="arrowBar" />
+        )}
       </button>
     </div>
   );

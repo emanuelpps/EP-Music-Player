@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { PLAYLIST_API, TRACK_STREAM, TRACK_INFO } from "../Api/MusicApi";
+//import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const MusicContext = createContext("");
 
@@ -13,7 +15,10 @@ export const MusicContextProvider = ({ children }) => {
   const [songInfo, setSongInfo] = useState([]);
   const [isPlaying, setIsPlaying] = useState(false);
   const [showPlayListContainer, setShowPlaylistContainer] = useState(false);
+  const [userPlaylist, setUserPlaylist] = useState([]);
+  const [activeLikeButton, setActiveLikeButton] = useState(false)
 
+  //llamada a la api solicitando la playlist
   useEffect(() => {
     const fetchPlaylistTracks = async () => {
       try {
@@ -27,10 +32,12 @@ export const MusicContextProvider = ({ children }) => {
     fetchPlaylistTracks(); // Llamar a la función para obtener los datos
   }, []);
 
+  //al cargar selecciona una track random
   useEffect(() => {
     playRandomTrack();
   }, [playlistTracks]);
 
+  // seleccionar una track random de la playlist devuelta de la api
   const playRandomTrack = () => {
     if (playlistTracks.length > 0) {
       const selectRandomTrack =
@@ -42,6 +49,7 @@ export const MusicContextProvider = ({ children }) => {
 
   console.log(playlistTracks);
 
+  // Reproducir un track
   const streamTrack = async (id) => {
     try {
       const audioUrl = await fetch(
@@ -55,11 +63,13 @@ export const MusicContextProvider = ({ children }) => {
 
   const selectedTrack = (id) => {
     //armar una logica que busque el id de la pista que se escucha y pinte en el playlist de otro color
-    if(playlistTracks.id === id){
-    const titleSelected = document.getElementById("songTitleId");
-    titleSelected.style.backgroundColor = "#4682A9";
-  }};
+    if (playlistTracks.id === id) {
+      const titleSelected = document.getElementById("songTitleId");
+      titleSelected.style.backgroundColor = "#4682A9";
+    }
+  };
 
+  // fetch solicitando la informacion de la track que se esta reproduciendo
   const fetchTrackInfo = async (id) => {
     try {
       const response = await fetch(
@@ -72,6 +82,7 @@ export const MusicContextProvider = ({ children }) => {
     }
   };
 
+  // Siguiente cancion de la playlist
   const nextSongStream = (id) => {
     if (playlistTracks.length === 0) {
       console.log("La lista de reproducción está vacía.");
@@ -92,6 +103,7 @@ export const MusicContextProvider = ({ children }) => {
     streamTrack(nextSongId);
   };
 
+  //Cancion previa de la playlist
   const previousSongStream = (id) => {
     if (playlistTracks.length === 0) {
       console.log("La lista de reproducción está vacía.");
@@ -113,7 +125,27 @@ export const MusicContextProvider = ({ children }) => {
     streamTrack(previousSongId);
   };
 
+  // Agregar canccion a la playlist
+  const addSongToPlaylist = (id) => {
+    console.log("ADDED");
 
+    const trackFinder = playlistTracks.find((track) => track.id === id);
+    const isInPlaylist = userPlaylist.find((track) => track.id === id)
+      ? true
+      : false;
+
+    if (isInPlaylist) {
+      setActiveLikeButton(false)
+      console.log("is in playlist");
+    } else {
+      setActiveLikeButton(true)
+      /*playlist.push(trackFinder);*/
+      console.log("trackFinder", trackFinder);
+      const playlist = [...userPlaylist, trackFinder];
+      setUserPlaylist(playlist);
+    }
+    console.log("playlust", userPlaylist);
+  };
 
   console.log(streamSong);
   const context = {
@@ -127,7 +159,10 @@ export const MusicContextProvider = ({ children }) => {
     nextSongStream,
     previousSongStream,
     showPlayListContainer,
-    setShowPlaylistContainer
+    setShowPlaylistContainer,
+    addSongToPlaylist,
+    userPlaylist,
+    activeLikeButton
   };
 
   return <Provider value={context}>{children}</Provider>;

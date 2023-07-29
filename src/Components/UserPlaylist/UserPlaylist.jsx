@@ -1,13 +1,27 @@
-import React from 'react';
+import React, { useContext, useState } from "react";
 import "./UserPlaylist.css";
-import Playlist from './Playlist';
+import BackPlaylistButton from "../Buttons/BackPlaylistButton/BackPlaylistButton";
+import { MusicContext } from "../../Context/MusicContext";
+import MyPlaylist from "./MyPlaylist";
 
 export default function UserPlaylist() {
+  const { userPlaylist } = useContext(MusicContext);
+
   return (
-    <div className='userPlaylist'>
-        <div className="userPlaylistTitle"><h5>My Playlist</h5>
+    <div className="userPlaylist">
+      <div className="userPlaylistTitle">
+        <div className="titleMyPlaylist">
+          <h5>My Playlist</h5>
         </div>
-        <div className="playlist"><Playlist/></div>
+        <div className="buttonBack">
+          <BackPlaylistButton />
+        </div>
+      </div>
+      <div className="myplaylist">
+        {userPlaylist?.map((item, index) => (
+          <MyPlaylist key={index} id={item.id} musicPlaylistTracks={item} />
+        ))}
+      </div>
     </div>
-  )
+  );
 }

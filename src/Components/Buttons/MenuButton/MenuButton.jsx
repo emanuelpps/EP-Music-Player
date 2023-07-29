@@ -4,7 +4,7 @@ import { FaAlignJustify } from "react-icons/fa";
 
 export default function MenuButton() {
   return (
-    <div className="dorpdown">
+    <div className="dorpdown m-2">
       <button
         className="buttonReset menuButton"
         type="button"

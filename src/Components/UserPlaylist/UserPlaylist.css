@@ -1,24 +1,45 @@
 .userPlaylist {
-  position: relative;
-  width: 80%;
-  background-color: #9F81E0;
-  overflow-y:scroll;
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5.3px);
-  -webkit-backdrop-filter: blur(5.3px);
-  border: 1px solid rgba(116, 155, 194, 0.46);
-  display: grid; 
-  grid-template-columns: 0.1fr 1fr 0.1fr; 
-  grid-template-rows: 0.1fr 1fr 0.1fr; 
-  gap: 0px 0px; 
-  grid-template-areas: 
-    ". userPlaylistTitle ."
-    ". playlist ."
-    ". . ."; 
-  grid-area: userPlaylist; 
+  z-index: 1;
+  width: 300px;
+  display: grid;
+  grid-template-columns: 0fr 1fr;
+  grid-template-rows: 0.1fr 1fr 0.1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "userPlaylistTitle userPlaylistTitle userPlaylistTitle"
+    "playlist playlist playlist"
+    "playlist playlist playlist";
+  grid-area: userPlaylist;
+  background-color: #9f81e0;
+  border-radius: 22px;
+  border: 3px solid #9175cd;;
+}
+.myplaylist {
+  grid-area: playlist;
+}
+.userPlaylistTitle {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "titleMyPlaylist . buttonBack";
+  grid-area: userPlaylistTitle;
+}
+.buttonBack {
+  margin-top: 10px;
+  justify-self: center; 
+  align-self: center; 
+  grid-area: buttonBack;
 }
 
-.userPlaylistTitle{
-    width: 100%;
+.titleMyPlaylist {
+  margin-top: 10px;
+  justify-self: center; 
+  align-self: center;
+  grid-area: titleMyPlaylist;
+}
+
+
+.titleMyPlaylist h5{
+  font-size: 1.1rem;
 }

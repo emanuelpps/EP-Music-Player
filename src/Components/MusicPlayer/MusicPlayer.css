@@ -17,31 +17,25 @@
 }
 
 .button-player {
-  height: max-content;
-  --key-text-color: #969faf;
-  --docsearch-key-shadow: inset 0 -2px 0 0 #cdcde6, inset 0 0 1px 1px #fff,
-    0 1px 2px 1px rgba(30, 35, 90, 0.4);
-  --docsearch-key-gradient: linear-gradient(-225deg, #d5dbe4, #f8f8f8);
-  border: none;
-  background: var(--docsearch-key-gradient);
-  border-radius: 50%;
-  box-shadow: var(--docsearch-key-shadow);
-  color: var(--key-text-color);
-  height: 1em;
-  text-align: center;
-  display: inline-block;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 0.8em;
-  min-width: 0.8em;
-  line-height: 1em;
-  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  background-image: linear-gradient(to top, #D8D9DB 0%, #fff 80%, #FDFDFD 100%);
+  border-radius: 30px;
+  border: 1px solid #8F9092;
+  transition: all 0.2s ease;
+  font-size: 10px;
+  font-weight: 600;
+  color: #687D94;
+  text-shadow: 0 1px #fff;
 }
 
-.button-player:active {
-  box-shadow: 0 1px #666;
-  transform: translateY(4px);
-}
+
+
 
 
 .audioPlayer div.rhap_progress-filled {
@@ -51,3 +45,8 @@
   .audioPlayer div.rhap_progress-indicator {
     background-color: #846DB9; 
   }
+
+  .audioPlayer .rhap_current-time,
+.audioPlayer .rhap_total-time {
+  font-size: 0.8rem;
+}

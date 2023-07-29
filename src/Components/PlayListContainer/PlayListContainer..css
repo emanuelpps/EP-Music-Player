@@ -6,42 +6,41 @@
   overflow-y: scroll;
   padding-top: 30px;
   border-radius: 22px;
-  transition-delay: 40s;
-  transition: ease-in 25s;
-	-webkit-animation: scale-up-ver-top 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-	        animation: scale-up-ver-top 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-          margin-bottom: 50px;
+  transition: ease-in 5s;
+  -webkit-animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
+    both;
+  animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  margin-bottom: 50px;
 }
 
 @-webkit-keyframes scale-up-ver-top {
   0% {
     -webkit-transform: scaleY(0.4);
-            transform: scaleY(0.4);
+    transform: scaleY(0.4);
     -webkit-transform-origin: 100% 0%;
-            transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
   }
   100% {
     -webkit-transform: scaleY(1);
-            transform: scaleY(1);
+    transform: scaleY(1);
     -webkit-transform-origin: 100% 0%;
-            transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
   }
 }
 @keyframes scale-up-ver-top {
   0% {
     -webkit-transform: scaleY(0.4);
-            transform: scaleY(0.4);
+    transform: scaleY(0.4);
     -webkit-transform-origin: 100% 0%;
-            transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
   }
   100% {
     -webkit-transform: scaleY(1);
-            transform: scaleY(1);
+    transform: scaleY(1);
     -webkit-transform-origin: 100% 0%;
-            transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
   }
 }
-
 
 .playListContainer:active {
   transition-delay: 4s;
