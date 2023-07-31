@@ -3,6 +3,7 @@ import "./MenuButton.css";
 import { FaAlignJustify } from "react-icons/fa";
 import { MusicContext } from "../../../Context/MusicContext";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function MenuButton() {
   const { showUserPlaylist, setShowUserPlaylist } = useContext(MusicContext);
@@ -34,9 +35,9 @@ export default function MenuButton() {
           </button>
         </li>
         <li>
-          <a class="dropdown-item" href="#">
+          <Link to={"https://emanuelpps.github.io/"} class="dropdown-item" href="#" target="_blank">
             More About Me
-          </a>
+          </Link>
         </li>
       </ul>
     </div>
