@@ -1,8 +1,8 @@
 @media (max-width: 1024px) {
   .layout {
     display: grid;
-    grid-template-columns: 0.5fr 1fr 0.5fr;
-    grid-template-rows: 0.2fr 1fr 0.8fr;
+    grid-template-columns: 0.1fr 2fr 0.1fr;
+    grid-template-rows: 0.1fr 1fr 0.8fr;
     grid-auto-columns: 1fr;
     grid-auto-rows: 1fr;
     gap: 0px 0px;
@@ -15,13 +15,17 @@
 
   .cardPlayer {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 0fr 1fr;
     grid-template-rows: 1fr 0.5fr;
     gap: 0px 0px;
     grid-template-areas:
       "cardArtist"
       "";
     grid-area: cardPlayer;
+  }
+
+  .cardArtist{
+    width: 100%;
   }
 
   .playlistContainer {
