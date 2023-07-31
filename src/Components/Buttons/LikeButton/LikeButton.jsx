@@ -3,6 +3,7 @@ import "./LikeButton.css";
 import { FaRegHeart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import { MusicContext } from "../../../Context/MusicContext";
+import { motion } from "framer-motion"
 
 export default function LikeButton() {
   const { addSongToPlaylist, songInfo, activeLikeButton,userPlaylist, streamSong } =  useContext(MusicContext);
@@ -22,12 +23,14 @@ export default function LikeButton() {
 
   return (
     <div>
-      <button
+      <motion.button
         className="buttonReset likeButton m-2"
         onClick={() => addSongToPlaylist(songInfo?.id)}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
       >
         {checkLikeButton}
-      </button>
+      </motion.button>
     </div>
   );
 }

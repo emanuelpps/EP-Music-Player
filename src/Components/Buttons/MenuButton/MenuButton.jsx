@@ -1,23 +1,37 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./MenuButton.css";
 import { FaAlignJustify } from "react-icons/fa";
+import { MusicContext } from "../../../Context/MusicContext";
+import { motion } from "framer-motion";
 
 export default function MenuButton() {
+  const { showUserPlaylist, setShowUserPlaylist } = useContext(MusicContext);
+
+  const showMyPlaylist = () => {
+    setShowUserPlaylist(!showUserPlaylist);
+  };
+
   return (
     <div className="dorpdown m-2">
-      <button
+      <motion.button
         className="buttonReset menuButton"
         type="button"
         data-bs-toggle="dropdown"
         aria-expanded="false"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
       >
         <FaAlignJustify />
-      </button>
+      </motion.button>
       <ul class="dropdown-menu">
         <li>
-          <a class="dropdown-item" href="#">
+          <button
+            class="dropdown-item"
+            href="#"
+            onClick={() => showMyPlaylist()}
+          >
             My Playlist
-          </a>
+          </button>
         </li>
         <li>
           <a class="dropdown-item" href="#">

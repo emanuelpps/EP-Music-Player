@@ -17,6 +17,7 @@ export const MusicContextProvider = ({ children }) => {
   const [showPlayListContainer, setShowPlaylistContainer] = useState(false);
   const [userPlaylist, setUserPlaylist] = useState([]);
   const [activeLikeButton, setActiveLikeButton] = useState(false);
+  const [showUserPlaylist, setShowUserPlaylist] = useState(false);
 
   //llamada a la api solicitando la playlist
   useEffect(() => {
@@ -177,6 +178,8 @@ export const MusicContextProvider = ({ children }) => {
     addSongToPlaylist,
     userPlaylist,
     activeLikeButton,
+    showUserPlaylist,
+    setShowUserPlaylist
   };
 
   return <Provider value={context}>{children}</Provider>;
