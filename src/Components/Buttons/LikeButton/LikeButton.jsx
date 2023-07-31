@@ -5,8 +5,11 @@ import { FaHeart } from "react-icons/fa";
 import { MusicContext } from "../../../Context/MusicContext";
 
 export default function LikeButton() {
-  const { addSongToPlaylist, songInfo, activeLikeButton } =
+  const { addSongToPlaylist, songInfo, activeLikeButton} =
     useContext(MusicContext);
+    
+
+
 
   return (
     <div>

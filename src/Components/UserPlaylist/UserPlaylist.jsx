@@ -18,8 +18,8 @@ export default function UserPlaylist() {
         </div>
       </div>
       <div className="myplaylist">
-        {userPlaylist?.map((item, index) => (
-          <MyPlaylist key={index} id={item.id} musicPlaylistTracks={item} />
+        {userPlaylist?.map((track, index) => (
+          <MyPlaylist key={index} id={track.id} myPlaylistTracks={track} />
         ))}
       </div>
     </div>

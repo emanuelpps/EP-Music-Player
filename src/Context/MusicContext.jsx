@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { PLAYLIST_API, TRACK_STREAM, TRACK_INFO } from "../Api/MusicApi";
 //import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 export const MusicContext = createContext("");
 
@@ -16,7 +16,7 @@ export const MusicContextProvider = ({ children }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [showPlayListContainer, setShowPlaylistContainer] = useState(false);
   const [userPlaylist, setUserPlaylist] = useState([]);
-  const [activeLikeButton, setActiveLikeButton] = useState(false)
+  const [activeLikeButton, setActiveLikeButton] = useState(false);
 
   //llamada a la api solicitando la playlist
   useEffect(() => {
@@ -127,25 +127,39 @@ export const MusicContextProvider = ({ children }) => {
 
   // Agregar canccion a la playlist
   const addSongToPlaylist = (id) => {
-    console.log("ADDED");
-
     const trackFinder = playlistTracks.find((track) => track.id === id);
     const isInPlaylist = userPlaylist.find((track) => track.id === id)
       ? true
       : false;
 
     if (isInPlaylist) {
-      setActiveLikeButton(false)
+      setActiveLikeButton(false);
+      console.log("REMOVED");
       console.log("is in playlist");
+      setUserPlaylist(userPlaylist.filter((track) => track.id !== id));
     } else {
-      setActiveLikeButton(true)
+      setActiveLikeButton(true);
       /*playlist.push(trackFinder);*/
+      console.log("ADDED");
       console.log("trackFinder", trackFinder);
-      const playlist = [...userPlaylist, trackFinder];
-      setUserPlaylist(playlist);
+      const newPlaylist = [...userPlaylist, trackFinder];
+      setUserPlaylist(newPlaylist);
     }
     console.log("playlust", userPlaylist);
   };
+
+  /* const removeSongofPlaylist = (id) => {
+    console.log('removed');
+
+    const trackFinder = playlistTracks.find((track) => track.id === id);
+    const isInPlaylist = userPlaylist.find((track) => track.id === id)
+    ? true
+    : false;
+
+    if(!isInPlaylist){
+
+    }
+  } */
 
   console.log(streamSong);
   const context = {
@@ -162,7 +176,7 @@ export const MusicContextProvider = ({ children }) => {
     setShowPlaylistContainer,
     addSongToPlaylist,
     userPlaylist,
-    activeLikeButton
+    activeLikeButton,
   };
 
   return <Provider value={context}>{children}</Provider>;

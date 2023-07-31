@@ -8,7 +8,7 @@ export default function Layout() {
   return (
     <div className='layout'>
       <CardPlayer/>
-      {/*<UserPlaylist/>*/}
+      <UserPlaylist/>
       <PlayListContainer/>
     </div>
   );
