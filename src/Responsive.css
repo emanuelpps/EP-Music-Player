@@ -38,8 +38,8 @@
 
   .userPlaylist{
     position: absolute;
-    width: 300px;
-    right: 38px;
+    width: 350px;
+    right: 10px;
     z-index: 3;
   }
 
