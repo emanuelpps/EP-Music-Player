@@ -9,6 +9,8 @@ const { Provider } = MusicContext;
 
 const useApiContext = () => useContext(MusicContext);
 
+/////////////////////////// hacer llamado de playlist a la api, esa respuesta enviarla a un array, en caso de que la reporduccion sea del userplaylist modificar ese array y pasar todas las pistas del user playlist a ese array y visceversa
+
 export const MusicContextProvider = ({ children }) => {
   const [playlistTracks, setPlaylistTracks] = useState([]);
   const [streamSong, setStreamSong] = useState("");
@@ -52,11 +54,13 @@ export const MusicContextProvider = ({ children }) => {
 
   // Reproducir un track
   const streamTrack = async (id) => {
+    const paintTrack = document.getElementsByClassName("trackPlaylistButton");
     try {
       const audioUrl = await fetch(
         `${TRACK_STREAM}/${id}/stream?app_name=EP-MUSIC-PLAYER`
       );
       setStreamSong(audioUrl.url); // Establecer la URL como fuente para la reproducción
+      paintTrack.style.backgroundColor = "blue"
     } catch (error) {
       console.log(error);
     }

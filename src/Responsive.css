@@ -1,0 +1,45 @@
+@media (max-width: 1024px) {
+  .layout {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+    grid-template-rows: 0.2fr 1fr 0.8fr;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      ". . ."
+      ". cardPlayer userPlaylist"
+      ". playlistContainer .";
+  }
+
+  .cardPlayer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.5fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "cardArtist"
+      "";
+    grid-area: cardPlayer;
+  }
+
+  .playlistContainer {
+    grid-area: playlistContainer;
+  }
+
+  .userPlaylist {
+    grid-area: userPlaylist;
+  }
+
+  .userPlaylist{
+    position: absolute;
+    width: 300px;
+    right: 38px;
+    z-index: 3;
+  }
+
+.titleMyPlaylist h5{
+    font-size: 0.8rem;
+}
+}

@@ -22,7 +22,7 @@ export default function MyPlaylist({id, myPlaylistTracks}) {
   
   
   return (
-      <button id=""  className="buttonReset trackPlaylistButton" onClick={() => {
+      <button  className="buttonReset trackPlaylistButton" onClick={() => {
         streamTrack(id);
         fetchTrackInfo(id); // Reemplaza "otraFuncion()" con el nombre de la segunda función que deseas llamar
       }}>
