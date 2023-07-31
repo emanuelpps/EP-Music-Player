@@ -1,6 +1,6 @@
 .userPlaylist {
   z-index: 1;
-  width: 300px;
+  width: 280px;
   display: grid;
   grid-template-columns: 0fr 1fr;
   grid-template-rows: 0.1fr 1fr 0.1fr;
@@ -12,10 +12,13 @@
   grid-area: userPlaylist;
   background-color: #9f81e0;
   border-radius: 22px;
-  border: 3px solid #9175cd;;
+  border: 3px solid #9175cd;
+  overflow: hidden ;
+  height: 300px;
 }
 .myplaylist {
   grid-area: playlist;
+  overflow-y: scroll;
 }
 .userPlaylistTitle {
   display: grid;
@@ -31,7 +34,8 @@
     160deg,
     #ffffff 3%,
     #c2d1e1 62%,
-    #b7c3d1 87%);
+    #b7c3d1 87%
+  );
   border-radius: 22px 22px 0px 0px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -39,21 +43,34 @@
 }
 .buttonBack {
   margin-top: 10px;
-  justify-self: center; 
-  align-self: center; 
+  justify-self: center;
+  align-self: center;
   grid-area: buttonBack;
 }
 
 .titleMyPlaylist {
   margin-top: 10px;
-  justify-self: center; 
+  justify-self: center;
   align-self: center;
   grid-area: titleMyPlaylist;
   border-radius: 22px;
 }
 
-
-.titleMyPlaylist h5{
-  color:#687D94;
+.titleMyPlaylist h5 {
+  color: #687d94;
   font-size: 0.9rem;
+}
+
+.myplaylist::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+.myplaylist::-webkit-scrollbar-track {
+  background: transparent; /* color of the tracking area */
+}
+
+.myplaylist::-webkit-scrollbar-thumb {
+  background-color: #9074ce; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid #9975e5; /* creates padding around scroll thumb */
 }

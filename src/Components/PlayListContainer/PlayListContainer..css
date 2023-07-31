@@ -1,50 +1,18 @@
 .playListContainer {
   z-index: 1;
-  display: none;
   grid-area: 3 / 2 / 4 / 3;
   background-color: #9f81e0;
   overflow-y: scroll;
   padding-top: 30px;
   border-radius: 22px;
-  transition: ease-in 5s;
-  -webkit-animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
-    both;
-  animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  margin-bottom: 50px;
+  height: 250px;
 }
 
-@-webkit-keyframes scale-up-ver-top {
-  0% {
-    -webkit-transform: scaleY(0.4);
-    transform: scaleY(0.4);
-    -webkit-transform-origin: 100% 0%;
-    transform-origin: 100% 0%;
-  }
-  100% {
-    -webkit-transform: scaleY(1);
-    transform: scaleY(1);
-    -webkit-transform-origin: 100% 0%;
-    transform-origin: 100% 0%;
-  }
-}
-@keyframes scale-up-ver-top {
-  0% {
-    -webkit-transform: scaleY(0.4);
-    transform: scaleY(0.4);
-    -webkit-transform-origin: 100% 0%;
-    transform-origin: 100% 0%;
-  }
-  100% {
-    -webkit-transform: scaleY(1);
-    transform: scaleY(1);
-    -webkit-transform-origin: 100% 0%;
-    transform-origin: 100% 0%;
-  }
-}
 
-.playListContainer:active {
+
+/* .playListContainer:active {
   transition-delay: 4s;
-}
+} */
 
 .playListContainer::-webkit-scrollbar {
   width: 12px; /* width of the entire scrollbar */

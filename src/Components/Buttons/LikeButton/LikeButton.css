@@ -2,10 +2,10 @@
   font-size: 1.5rem;
 }
 
-.likeButton:hover {
+/* .likeButton:hover {
   font-size: 1.7rem;
   transition: 0.1s;
-}
+} */
 
 .likeButtonFill{
   color: #846DB9;

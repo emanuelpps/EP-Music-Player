@@ -6,30 +6,27 @@ import { MusicContext } from "../../../Context/MusicContext";
 import { motion } from "framer-motion"
 
 export default function LikeButton() {
-  const { addSongToPlaylist, songInfo, activeLikeButton,userPlaylist, streamSong } =  useContext(MusicContext);
-  const [checkLikeButton, setCheckLikeButton] = useState("");
+  const { addSongToPlaylist, songInfo, activeLikeButton, userPlaylist, streamSong } =  useContext(MusicContext);
+  const [checkLikeButton, setCheckLikeButton] = useState(false);
 
   useEffect(() => {
-    const inPlaylist = userPlaylist.find((track) => track.id === songInfo.id)
-      ? true
-      : false;
-    // Actualizar el estado del botón cada vez que activeLikeButton cambie
-    if (inPlaylist) {
-      setCheckLikeButton(<FaHeart className="likeButtonFill" />);
-    } else {
-      setCheckLikeButton(<FaRegHeart />);
-    }
-  }, [streamSong, activeLikeButton, checkLikeButton]);
+    const inPlaylist = userPlaylist.some((track) => track.id === songInfo.id);
+    setCheckLikeButton(inPlaylist);
+  }, [userPlaylist, songInfo.id]);
+
+  const handleLikeButtonClick = () => {
+    addSongToPlaylist(songInfo?.id);
+  };
 
   return (
     <div>
       <motion.button
         className="buttonReset likeButton m-2"
-        onClick={() => addSongToPlaylist(songInfo?.id)}
+        onClick={handleLikeButtonClick}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
       >
-        {checkLikeButton}
+        {checkLikeButton ? <FaHeart className="likeButtonFill" /> : <FaRegHeart />}
       </motion.button>
     </div>
   );
