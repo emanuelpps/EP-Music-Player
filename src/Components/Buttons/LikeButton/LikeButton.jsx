@@ -3,10 +3,16 @@ import "./LikeButton.css";
 import { FaRegHeart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import { MusicContext } from "../../../Context/MusicContext";
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 export default function LikeButton() {
-  const { addSongToPlaylist, songInfo, activeLikeButton, userPlaylist, streamSong } =  useContext(MusicContext);
+  const {
+    addSongToPlaylist,
+    songInfo,
+    activeLikeButton,
+    userPlaylist,
+    streamSong,
+  } = useContext(MusicContext);
   const [checkLikeButton, setCheckLikeButton] = useState(false);
 
   useEffect(() => {
@@ -26,7 +32,11 @@ export default function LikeButton() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
       >
-        {checkLikeButton ? <FaHeart className="likeButtonFill" /> : <FaRegHeart />}
+        {checkLikeButton ? (
+          <FaHeart className="likeButtonFill" />
+        ) : (
+          <FaRegHeart />
+        )}
       </motion.button>
     </div>
   );

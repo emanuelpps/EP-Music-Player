@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { PLAYLIST_API, TRACK_STREAM, TRACK_INFO } from "../Api/MusicApi";
-//import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
 export const MusicContext = createContext("");
@@ -8,8 +7,6 @@ export const MusicContext = createContext("");
 const { Provider } = MusicContext;
 
 const useApiContext = () => useContext(MusicContext);
-
-/////////////////////////// hacer llamado de playlist a la api, esa respuesta enviarla a un array, en caso de que la reporduccion sea del userplaylist modificar ese array y pasar todas las pistas del user playlist a ese array y visceversa
 
 export const MusicContextProvider = ({ children }) => {
   const [playlistTracks, setPlaylistTracks] = useState([]);
@@ -66,13 +63,7 @@ export const MusicContextProvider = ({ children }) => {
     }
   };
 
-  const selectedTrack = (id) => {
-    //armar una logica que busque el id de la pista que se escucha y pinte en el playlist de otro color
-    if (playlistTracks.id === id) {
-      const titleSelected = document.getElementById("songTitleId");
-      titleSelected.style.backgroundColor = "#4682A9";
-    }
-  };
+
 
   // fetch solicitando la informacion de la track que se esta reproduciendo
   const fetchTrackInfo = async (id) => {

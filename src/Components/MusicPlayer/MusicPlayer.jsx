@@ -22,12 +22,12 @@ export default function MusicPlayer() {
   const [play, { pause }] = useSound(streamSong);
 
   const playingButton = () => {
-    play(); // this will play the audio
+    play();
     setIsPlaying(true);
   };
 
   const pauseButton = () => {
-    pause(); // this will pause the audio
+    pause();
     setIsPlaying(false);
   };
 

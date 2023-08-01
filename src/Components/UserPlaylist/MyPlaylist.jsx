@@ -27,7 +27,7 @@ export default function MyPlaylist({id, myPlaylistTracks}) {
         fetchTrackInfo(id); // Reemplaza "otraFuncion()" con el nombre de la segunda función que deseas llamar
       }}>
         <h5 className="text-start track-Title">{myPlaylistTracks.title}</h5>
-        <h7 className="trackTime">{myPlaylistTime()}</h7>
+        <h6 className="trackTime">{myPlaylistTime()}</h6>
       </button>
   );
   }

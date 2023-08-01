@@ -70,7 +70,7 @@
 }
 
 .myplaylist::-webkit-scrollbar-thumb {
-  background-color: #9074ce; /* color of the scroll thumb */
-  border-radius: 20px; /* roundness of the scroll thumb */
-  border: 3px solid #9975e5; /* creates padding around scroll thumb */
+  background-color: #9074ce; 
+  border-radius: 20px; 
+  border: 3px solid #9975e5; 
 }

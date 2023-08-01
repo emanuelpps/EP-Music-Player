@@ -36,9 +36,8 @@
   grid-area: menu;
 }
 
-
-.song-Title{
-  color:#687D94;
+.song-Title {
+  color: #687d94;
   font-size: 0.9rem;
 }
 
@@ -68,23 +67,21 @@
   transform: translate(-50%, -50%);
 }
 
- /*@keyframes rotate {
-  100% {
-    transform: rotate(360deg);
-  }
-}*/
- 
 .blue::before {
   content: "";
   position: absolute;
   height: 30px;
   border-radius: 50%;
   width: 30px;
-  background: rgb(246,244,235);
-  background: radial-gradient(circle, rgba(246,244,235,1) 26%, rgba(189,62,40,1) 27%, rgba(36,36,36,1) 49%);
-  box-shadow: 0 5px 10px rgb(0 0 0 / 30%);  top: 50%;
+  background: rgb(246, 244, 235);
+  background: radial-gradient(
+    circle,
+    rgba(246, 244, 235, 1) 26%,
+    rgba(189, 62, 40, 1) 27%,
+    rgba(36, 36, 36, 1) 49%
+  );
+  box-shadow: 0 5px 10px rgb(0 0 0 / 30%);
+  top: 50%;
   left: 50%;
   transform: translate(-300%, -50%);
 }
-
-
