@@ -7,8 +7,8 @@ export default function SongImage() {
   const { songInfo = {} } = useContext(MusicContext);
   return songInfo.artwork ? (
     <img
-      src={songInfo?.artwork?.["150x150"]}
-      alt={songInfo?.title}
+      src={songInfo.artwork?.["150x150"]}
+      alt={songInfo.title}
       className="songImage"
     />
   ) : (
