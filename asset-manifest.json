@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/EP-Music-Player/static/css/main.b4988cae.css",
-    "main.js": "/EP-Music-Player/static/js/main.3597fab9.js",
+    "main.css": "/EP-Music-Player/static/css/main.ded87a49.css",
+    "main.js": "/EP-Music-Player/static/js/main.5a3185de.js",
     "static/js/845.f0a37eb6.chunk.js": "/EP-Music-Player/static/js/845.f0a37eb6.chunk.js",
     "static/js/787.99bed1c7.chunk.js": "/EP-Music-Player/static/js/787.99bed1c7.chunk.js",
     "static/media/ep-music.png": "/EP-Music-Player/static/media/ep-music.5d80ef357c1a720ab28e.png",
     "index.html": "/EP-Music-Player/index.html",
-    "main.b4988cae.css.map": "/EP-Music-Player/static/css/main.b4988cae.css.map",
-    "main.3597fab9.js.map": "/EP-Music-Player/static/js/main.3597fab9.js.map",
+    "main.ded87a49.css.map": "/EP-Music-Player/static/css/main.ded87a49.css.map",
+    "main.5a3185de.js.map": "/EP-Music-Player/static/js/main.5a3185de.js.map",
     "845.f0a37eb6.chunk.js.map": "/EP-Music-Player/static/js/845.f0a37eb6.chunk.js.map",
     "787.99bed1c7.chunk.js.map": "/EP-Music-Player/static/js/787.99bed1c7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b4988cae.css",
-    "static/js/main.3597fab9.js"
+    "static/css/main.ded87a49.css",
+    "static/js/main.5a3185de.js"
   ]
 }
