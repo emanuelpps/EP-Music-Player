@@ -1,27 +1,34 @@
 import React, { useContext, useState, useEffect } from "react";
-import "./LikeButton.css";
-import { FaRegHeart } from "react-icons/fa";
-import { FaHeart } from "react-icons/fa";
-import { MusicContext } from "../../../Context/MusicContext";
+import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { MusicContext } from "../../../Context/MusicContext";
+import "./LikeButton.css";
 
 export default function LikeButton() {
   const {
     addSongToPlaylist,
-    songInfo,
-    activeLikeButton,
+    songInfo = {},
     userPlaylist,
-    streamSong,
   } = useContext(MusicContext);
+
   const [checkLikeButton, setCheckLikeButton] = useState(false);
 
   useEffect(() => {
-    const inPlaylist = userPlaylist.some((track) => track.id === songInfo.id);
-    setCheckLikeButton(inPlaylist);
+    try {
+      const inPlaylist =
+        songInfo?.id && userPlaylist.some((track) => track.id === songInfo.id);
+      setCheckLikeButton(inPlaylist);
+    } catch (error) {
+      console.error("Error in useEffect:", error);
+    }
   }, [userPlaylist, songInfo.id]);
 
   const handleLikeButtonClick = () => {
-    addSongToPlaylist(songInfo?.id);
+    try {
+      addSongToPlaylist(songInfo?.id);
+    } catch (error) {
+      console.error("Error in handleLikeButtonClick:", error);
+    }
   };
 
   return (
